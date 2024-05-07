@@ -1,4 +1,4 @@
-package main;
+package battle;
 
 public class main {
 	public static Player[] player = { new Player("Player1", 10, 10, 1, 1, 1, 1, 1,""),
@@ -10,5 +10,7 @@ public class main {
 
 		battle_phase bt = new battle_phase();
 		bt.battle(player);
+		
+		
 	}
 }

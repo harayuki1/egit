@@ -8,19 +8,27 @@ public class Meiro {
 	//private String[][] dangeon; 
 	private static Event[] event= {new Treasure(0,0),new Event(0,0,"")};
 	private static Panel[][] dangeon = {
-			{ new Panel_wall_3( "wall_3_nodown"), new Panel_wall_2("wall_2_upleft"), new Panel_wall_2("wall_2_updown"), new Panel_wall_2("wall_2_updown"), new Panel_wall_2("wall_2_upright") }, 
-			{ new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_upleft"), new Panel_wall_2("wall_2_upright"), new Panel_wall_2("wall_2_leftright")}, 
-			{ new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright") },
-			{ new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright"), new Panel_wall_2("wall_2_leftright") }, 
-			{ new Panel_wall_2("wall_2_downleft"), new Panel_wall_2("wall_2_downright"), new Panel_wall_3("wall_3_noup"),new Panel_wall_2("wall_2_downleft"), new Panel_wall_2("wall_2_downright") } };
+			{new Panel_wall_3("wall_3_nodown"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4")},
+			{new Panel_wall_2("wall_2_downleft"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_upright")},
+			{new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright")},
+			{new Panel_wall_2("wall_2_upleft"),new Panel_wall_2("wall_2_updown"),new Panel_Cross("wall_Cross"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_upright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright")},
+			{new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright")},
+			{new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_3("wall_3_noright"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_downright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright")},
+			{new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright")},
+			{new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_upleft"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_downright")},
+			{new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_leftright"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4")},
+			{new Panel_wall_3("wall_3_noup"),new Panel_wall_4("wall_4"),new Panel_wall_2("wall_2_downleft"),new Panel_wall_2("wall_2_updown"),new Panel_Cross("wall_Cross"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_updown"),new Panel_wall_2("wall_2_upright")},
+			{new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_3("wall_3_noup"),new Panel_wall_2("wall_2_leftright")},
+			
+			
+			};
 
-	
 
 	public Meiro() {
-		this(dangeon, 4, 2, 0, 0,event);
+		this(dangeon, 10,8,0,0,event);
 	}
 	public Meiro(Event[] event) {
-		this(dangeon, 4, 2, 0, 0,event);
+		this(dangeon,8,5,0,8,event);
 	}
 
 	public Meiro(Panel[][] dangeon, int start_row, int start_col, int goal_row, int goal_col,Event[] event) {
