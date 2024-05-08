@@ -81,6 +81,7 @@ public class battle_phase {
 				}
 				enemy.set_HP((int)(enemy.get_HP()-(attack * (1 - 0.003 * enemy.get_guard()))));
 				System.out.println(attack + "のダメージ");
+				System.out.println("敵の残りHP"+enemy.get_HP());
 			} else {
 				System.out.println("はずれた");
 			}
@@ -133,7 +134,7 @@ public class battle_phase {
 				System.out.println("逃げれなかった");
 			}
 		}
-		System.out.println("敵の残りHP"+enemy.get_HP());
+		
 		if(enemy.get_HP()==0) {
 			enemycount--;
 		}
