@@ -44,9 +44,10 @@ public class main {
 		
 		while (true) {
 			//field.repaint();
+			//移動
 			now = control(dangeon.get_dangeon(), now,field);
 			field.repaint();
-			
+			//イベント処理
 			if (now[0] == dangeon.get_goal_row() && now[1] == dangeon.get_goal_col()) {
 				System.out.println("終わり");
 				break;
@@ -58,6 +59,7 @@ public class main {
 				}
 
 			}
+			//バトルの処理
 			int dice = (int) (Math.random() * 100 + 1);
 			if(dice<=20) {
 				battle_phase bt = new battle_phase();
@@ -125,6 +127,7 @@ public class main {
 
 	}
 
+	//イベントをセットするもの　後にランダム予定
 	public static Event[] setting(Meiro dangeon) {
 		Event[] e = new Event[3];
 		for (int i = 0; i < e.length; i++) {

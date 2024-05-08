@@ -1,5 +1,5 @@
 package dangeon;
-
+//今は使わない
 public class Map {
 	public static void visualize(Panel[][] dangeon, int start_row, int start_col, int goal_row, int goal_col) {
 		String[][] draw = new String[5 * dangeon.length][dangeon[0].length];

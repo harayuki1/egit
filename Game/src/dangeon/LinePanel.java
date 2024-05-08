@@ -233,7 +233,7 @@ public class LinePanel extends JPanel {
 		super.paint(g);
 		
 		g.setColor(Color.RED);
-		g.fillRect(now_x, now_y, 10, 10); // 四角形を描画
+		g.fillRect(now_x, now_y, 10, 10);
 	}
 
 	public int getNowX() {
