@@ -15,14 +15,18 @@ public class battle_phase {
 	public static void battle(Player[] player) {//戦闘処理
 
 		playercount = 3;
-		//エネミーの数はいったん一人、のちに数が増えるのでその処理をしなければ。。。
+		//エネミーの数はいったん一人、のちに数が増えるのでその処理が必要
 		enemycount = 1;
 		boolean win=false;
 		//encount関連の処理
 		while(true) {
 			
 			for (int i = 0; i < encount; i++) {
-				myphase(player[i], enemy);
+				if(player[i].get_HP()==0) {
+					
+				}else {
+					myphase(player[i], enemy);
+				}
 				if (escape == true) {
 					win=true;
 					break;
@@ -32,11 +36,12 @@ public class battle_phase {
 			if (enemycount == 0) {
 				System.out.println("勝利");
 				level.Level(player,enemy);
-				//Mantra_action.mantra_exp(player, enemy);
+				//skilltree_action.mantra_exp(player, enemy);
 				win=true;
 				return;
 			}
 			//encount関連の処理
+			
 			for (int i = 0; i < encount; i++) {
 				if (escape == true) {
 					break;
@@ -61,7 +66,7 @@ public class battle_phase {
 
 	//プレイヤーのアクション
 	private static void myphase(Player player, Enemy enemy) {
-		System.out.println("1.攻撃　2.アクション　3.アイテム　4.逃げる");
+		System.out.println("1.攻撃　2.スキル(現在はなし)　3.アイテム(現在はなし)4.逃げる");
 		int command = Input.getInt(player.get_name() + "が何をするか選んでください");
 		if (command == 1) { //攻撃
 			int attack;
@@ -80,8 +85,11 @@ public class battle_phase {
 				System.out.println("はずれた");
 			}
 
-			System.out.println(enemy.get_HP());
-		} else if (command == 2) {//アクション"
+			//System.out.println(enemy.get_HP());
+			
+		} 
+		/*
+		else if (command == 2) {//アクション"
 			int command_action = Input.getInt("何をするか選んでください　1." + player.get_skill1() + "　2." + player.get_skill2() + "　3."
 					+ player.get_skill3() + "　4." + player.get_skill4() + "　5." + player.get_skill5() + "6." + player.get_skill6() + "　7."
 					+ player.get_skill7() + "　8." + player.get_skill8());
@@ -112,15 +120,22 @@ public class battle_phase {
 				break;
 
 			}
-		} else if (command == 3) {//アイテム
+		}
+		 else if (command == 3) {//アイテム
 
-		} else if (command == 4) {//逃げる
+		} 
+		*/
+		else if (command == 4) {//逃げる
 			if ((int) (Math.random() * 2) == 0) {
 				System.out.println("逃げた");
 				escape = true;
 			} else {
 				System.out.println("逃げれなかった");
 			}
+		}
+		System.out.println("敵の残りHP"+enemy.get_HP());
+		if(enemy.get_HP()==0) {
+			enemycount--;
 		}
 	}
 
@@ -141,18 +156,25 @@ public class battle_phase {
 			int dice = (int) (Math.random() * 100 + 1);
 			if (dice < 90 - (int) (player.get_speed() * 0.01 * 30)) {
 				player.set_HP((int)(player.get_HP() - (enemy.get_attack() * (1 - 0.003 * player.get_guard()))));
-				System.out.println(enemy.get_attack() + "のダメージ");
+				System.out.println(player.get_name()+"に"+enemy.get_attack() + "のダメージ");
 			} else {
 				System.out.println("敵の攻撃は外れた");
 			}
-		} else if (command == 2) {//アクション
+		}
+		/*
+		else if (command == 2) {//アクション
 
-		} else if (command == 3) {//逃げる
+		} 
+		*/
+		else if (command == 3) {//逃げる
 			if ((int) (Math.random() * 2) == 0) {
 				System.out.println("逃げられた");
 			} else {
 				System.out.println("逃げれなかった");
 			}
+		}
+		if(player.get_HP()==0) {
+			playercount--;
 		}
 
 	}

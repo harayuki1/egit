@@ -1,5 +1,6 @@
 package dangeon;
-
+//データベースを活用予定　
+//一時的なマップサンプル保存
 public class storage_dangeon {
 	private static Panel[][] sample = {
 			{new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4"),new Panel_wall_4("wall_4")},

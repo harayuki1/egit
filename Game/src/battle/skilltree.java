@@ -1,6 +1,6 @@
 package battle;
-//マントラというスキルを得るためのプレイヤーそれぞれに装備するもの（FF７のマテリアに似たもの）
-public class Mantra {
+
+public class skilltree {
 	private String name;
 	private int exp=0;//現在経験値
 	private int max_exp;//目標経験値　ここまで達することでスキルが使える。
@@ -9,7 +9,7 @@ public class Mantra {
 	private String skill2;
 	private String skill3;
 	private String skill4;
-	public Mantra(String name,int max_exp,Player player,String skill1,String skill2,String skill3,String skill4) {
+	public skilltree(String name,int max_exp,Player player,String skill1,String skill2,String skill3,String skill4) {
 		this.name=name;
 		this.max_exp=max_exp;
 		this.player=player;

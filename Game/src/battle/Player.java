@@ -5,7 +5,7 @@ public class Player {
 	private String name;//名前
 	private int Lv = 1;//現在レベル
 	private int exp = 0;//現在経験値
-	private Mantra now_mantra;
+	private skilltree now_mantra;
 	private int HP; //体力
 	private int MP; //コスト
 	private int attack; //攻撃力
@@ -21,7 +21,7 @@ public class Player {
 	private String skill6;
 	private String skill7;
 	private String skill8;
-	private boolean hunting=false;//戦闘後の経験値処理で必要
+	//private boolean hunting=false;//戦闘後の経験値処理で必要
 
 	public Player(String name, int HP, int MP, int attack, int magic, int guard, int speed, int luck, String skill1) {
 		this.name = name;
@@ -61,10 +61,10 @@ public class Player {
 	public void set_exp(int exp) {
 		this.exp = exp;
 	}
-	public Mantra get_now_mantra() {
+	public skilltree get_now_mantra() {
 		return now_mantra;
 	}
-	public void set_now_mantra(Mantra now_mantra) {
+	public void set_now_mantra(skilltree now_mantra) {
 		this.now_mantra = now_mantra;
 	}
 
@@ -176,12 +176,14 @@ public class Player {
 	public void set_skill8(String skill8) {
 		this.skill8 = skill8;
 	}
+	/*
 	public boolean get_hunting() {
 		return hunting;
 	}
 	public void set_hunting(boolean hunting) {
 		this.hunting=hunting;
 	}
+	*/
 
 
 }

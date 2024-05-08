@@ -1,7 +1,8 @@
 package battle;
 
-//戦闘後のマントラの経験値処理
-public class Mantra_action {
+//戦闘後の経験値処理
+public class skilltree_action {
+	/*
 	public static void mantra_exp(Player[] player, Enemy enemy) {
 		for (int i = 0; i < player.length; i++) {
 			int get_exp=enemy.get_Lv()*10;
@@ -18,4 +19,5 @@ public class Mantra_action {
 	public static void mantra_menu() {
 		
 	}
+	*/
 }
